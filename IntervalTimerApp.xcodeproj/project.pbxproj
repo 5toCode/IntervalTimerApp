@@ -23,6 +23,7 @@
 		6834DD5579391FC132A8ABBA /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70922CF7DFADE57819C0BF1 /* WorkoutSession.swift */; };
 		6D92D2286690C96E50F232E2 /* PresetSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCAB5A7F6443017D9FF8EF /* PresetSetupView.swift */; };
 		6E7FB28C0FE18519EEB5C651 /* WorkoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA7D3212E0C03CA5CE0FAB /* WorkoutMode.swift */; };
+		7F664E41FC9DF6717099E5BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8292F025E4E5DDD99D1867 /* Assets.xcassets */; };
 		80ACBB84AA63EFE40891E56B /* TimerScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B1209323F65DBA3879301 /* TimerScriptBuilder.swift */; };
 		87411F4AC38128E81C468D87 /* TimerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FC76AD02A0024091AAE54 /* TimerPreset.swift */; };
 		893F51A3ED648A33B18A383A /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0B65572AFEC8D2BA2C425 /* SessionViewModel.swift */; };
@@ -61,6 +62,7 @@
 		2AE9253293E08CAFAD47F16A /* IntervalTimerAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = IntervalTimerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B3BE41235D764B47F2D396 /* TimerEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngineProtocol.swift; sourceTree = "<group>"; };
 		42E3988D94C390D8E01F38FA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		4A8292F025E4E5DDD99D1867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534B1209323F65DBA3879301 /* TimerScriptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScriptBuilder.swift; sourceTree = "<group>"; };
 		556E6CA6A29504A3BD003DF4 /* CueSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CueSchedulerTests.swift; sourceTree = "<group>"; };
 		56CCAB5A7F6443017D9FF8EF /* PresetSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetSetupView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		146CCB8D1744ED1BA15C3E6C /* IntervalTimerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A8292F025E4E5DDD99D1867 /* Assets.xcassets */,
 				9178DEC55C2B202968AE56BB /* App */,
 				2EFD5478386065048046E29B /* Core */,
 				AE288302D6F81A42632B59B1 /* Features */,
@@ -269,6 +272,7 @@
 			buildConfigurationList = 12C5792D368338E25595D3EF /* Build configuration list for PBXNativeTarget "IntervalTimerApp" */;
 			buildPhases = (
 				A0A4EFCEA5E02EA23A903024 /* Sources */,
+				8F6F7F6965253B848D9BD009 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +315,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F6F7F6965253B848D9BD009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F664E41FC9DF6717099E5BB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0A4EFCEA5E02EA23A903024 /* Sources */ = {

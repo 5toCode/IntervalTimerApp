@@ -6,15 +6,18 @@ protocol CueDispatching {
 }
 
 final class AudioCueService: CueDispatching {
-    private let warningBeepSoundID: SystemSoundID = 1006
-    private let startDingSoundID: SystemSoundID = 1054
+    private let settings: AppSettings
+
+    init(settings: AppSettings) {
+        self.settings = settings
+    }
 
     func play(_ event: CueEvent) {
         switch event {
         case .intervalStartLongBeep:
-            AudioServicesPlaySystemSound(startDingSoundID)
+            AudioServicesPlaySystemSound(SystemSoundID(settings.startSoundID))
         case .countdown321, .intervalHalfway, .intervalFinal3:
-            AudioServicesPlayAlertSound(warningBeepSoundID)
+            AudioServicesPlayAlertSound(SystemSoundID(settings.countdownSoundID))
         }
     }
 }

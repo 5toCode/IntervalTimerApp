@@ -15,12 +15,28 @@ struct SettingsView: View {
 
             Section("Audio") {
                 Toggle("Audible cues", isOn: $settings.audibleCuesEnabled)
+                Picker("Countdown sound", selection: $settings.countdownSoundID) {
+                    ForEach(CountdownSoundOption.allCases) { option in
+                        Text(option.title).tag(option.rawValue)
+                    }
+                }
+                Picker("Start sound", selection: $settings.startSoundID) {
+                    ForEach(StartSoundOption.allCases) { option in
+                        Text(option.title).tag(option.rawValue)
+                    }
+                }
             }
         }
         .onChange(of: settings.defaultCountdownSeconds, initial: false) { _, _ in
             settings.persist()
         }
         .onChange(of: settings.audibleCuesEnabled, initial: false) { _, _ in
+            settings.persist()
+        }
+        .onChange(of: settings.countdownSoundID, initial: false) { _, _ in
+            settings.persist()
+        }
+        .onChange(of: settings.startSoundID, initial: false) { _, _ in
             settings.persist()
         }
         .scrollContentBackground(.hidden)

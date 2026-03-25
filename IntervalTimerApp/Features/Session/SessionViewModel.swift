@@ -20,14 +20,13 @@ final class SessionViewModel: ObservableObject {
         preset: TimerPreset,
         settings: AppSettings,
         scriptBuilder: TimerScriptBuilderProtocol = TimerScriptBuilder(),
-        engine: TimerEngineProtocol = TimerEngine(),
-        cueDispatcher: CueDispatching = AudioCueService()
+        engine: TimerEngineProtocol = TimerEngine()
     ) {
         self.preset = preset
         self.scriptBuilder = scriptBuilder
         self.engine = engine
-        self.cueDispatcher = cueDispatcher
         self.settings = settings
+        self.cueDispatcher = AudioCueService(settings: settings)
         configure()
         bind()
     }

@@ -31,9 +31,12 @@ final class PresetSetupViewModel: ObservableObject {
     init(mode: WorkoutMode, settings: AppSettings) {
         self.mode = mode
         self.settings = settings
+        applyPersistedSelection()
     }
 
     func makePreset() -> TimerPreset {
+        persistCurrentSelection()
+
         let config: TimerPresetConfig
         switch mode {
         case .amrap:
@@ -79,5 +82,31 @@ final class PresetSetupViewModel: ObservableObject {
             return "\(minutes) min"
         }
         return "\(minutes):" + String(format: "%02d", remainder)
+    }
+
+    private func applyPersistedSelection() {
+        guard let saved = settings.loadSelection(for: mode) else { return }
+        totalDuration = saved.totalDuration
+        intervalEvery = saved.intervalEvery
+        amrapDurations = saved.amrapDurations.isEmpty ? [300] : saved.amrapDurations
+        amrapRestBetweenIntervals = saved.amrapRestBetweenIntervals
+        rounds = saved.rounds
+        workDuration = saved.workDuration
+        restDuration = saved.restDuration
+        customSteps = saved.customSteps.count >= 2 ? saved.customSteps : customSteps
+    }
+
+    private func persistCurrentSelection() {
+        let selection = ModeTimerSelection(
+            totalDuration: totalDuration,
+            intervalEvery: intervalEvery,
+            amrapDurations: amrapDurations,
+            amrapRestBetweenIntervals: amrapRestBetweenIntervals,
+            rounds: rounds,
+            workDuration: workDuration,
+            restDuration: restDuration,
+            customSteps: customSteps
+        )
+        settings.saveSelection(selection, for: mode)
     }
 }
