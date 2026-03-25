@@ -1,0 +1,38 @@
+name: IntervalTimerApp
+options:
+  bundleIdPrefix: com.mikeroberts
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: 5.10
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+targets:
+  IntervalTimerApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: IntervalTimerApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mikeroberts.IntervalTimerApp
+        PRODUCT_NAME: IntervalTimerApp
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent
+        GENERATE_INFOPLIST_FILE: true
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    scheme:
+      testTargets:
+        - IntervalTimerAppTests
+
+  IntervalTimerAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: IntervalTimerAppTests
+    dependencies:
+      - target: IntervalTimerApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mikeroberts.IntervalTimerAppTests
+        GENERATE_INFOPLIST_FILE: true

@@ -1,0 +1,23 @@
+{
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionControlsView.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionControlsView.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionControlsView.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionControlsView.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionControlsView.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionControlsView.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Setup/PresetSetupView.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupView.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupView.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupView.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupView.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupView.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Setup/PresetSetupViewModel.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupViewModel.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupViewModel.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupViewModel.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupViewModel.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/PresetSetupViewModel.swiftdeps"
+  }
+}

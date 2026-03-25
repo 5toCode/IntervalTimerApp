@@ -1,0 +1,23 @@
+{
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/App/Theme.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/Theme.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/Theme.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/Theme.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/Theme.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/Theme.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionView.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionView.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionView.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionView.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionView.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionView.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionViewModel.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionViewModel.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionViewModel.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionViewModel.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionViewModel.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/SessionViewModel.swiftdeps"
+  }
+}

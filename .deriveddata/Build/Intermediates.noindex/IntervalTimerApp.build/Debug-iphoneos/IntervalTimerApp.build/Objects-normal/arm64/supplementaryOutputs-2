@@ -1,0 +1,23 @@
+{
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Engine/CueScheduler.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueScheduler.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueScheduler.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueScheduler.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueScheduler.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueScheduler.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Services/HapticsService.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HapticsService.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HapticsService.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HapticsService.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HapticsService.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HapticsService.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Home/HomeView.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HomeView.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/HomeView.swiftdeps"
+  }
+}

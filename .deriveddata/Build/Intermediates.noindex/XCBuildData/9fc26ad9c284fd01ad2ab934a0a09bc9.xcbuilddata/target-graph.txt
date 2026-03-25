@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'IntervalTimerApp' in project 'IntervalTimerApp' (no dependencies)

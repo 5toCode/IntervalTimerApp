@@ -1,0 +1,23 @@
+{
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/App/AppRouter.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AppRouter.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AppRouter.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AppRouter.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AppRouter.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AppRouter.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Models/CueEvent.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueEvent.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueEvent.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueEvent.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueEvent.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/CueEvent.swiftdeps"
+  },
+  "/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Services/AudioCueService.swift" : {
+    "const-values" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AudioCueService.swiftconstvalues",
+    "dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AudioCueService.d",
+    "diagnostics" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AudioCueService.dia",
+    "object" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AudioCueService.o",
+    "swift-dependencies" : "/Users/mikeroberts/Projects/IntervalTimerApp/.deriveddata/Build/Intermediates.noindex/IntervalTimerApp.build/Debug-iphoneos/IntervalTimerApp.build/Objects-normal/arm64/AudioCueService.swiftdeps"
+  }
+}
