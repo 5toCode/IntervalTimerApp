@@ -1,8 +1,7 @@
 import Foundation
 
 struct AMRAPConfig: Codable, Equatable, Hashable {
-    var intervalDuration: TimeInterval
-    var intervals: Int
+    var intervalDurations: [TimeInterval]
 }
 
 struct EMOMConfig: Codable, Equatable, Hashable {

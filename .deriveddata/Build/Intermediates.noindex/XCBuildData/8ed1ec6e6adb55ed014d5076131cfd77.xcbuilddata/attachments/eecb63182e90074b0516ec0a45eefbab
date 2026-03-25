@@ -1,4 +1,5 @@
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/App/AppRouter.swift
+/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Services/AppSettings.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Services/AudioCueService.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Models/CueEvent.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Engine/CueScheduler.swift
@@ -12,6 +13,7 @@
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionControlsView.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionView.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Session/SessionViewModel.swift
+/Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Features/Settings/SettingsView.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/App/Theme.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Shared/Extensions/TimeInterval+Format.swift
 /Users/mikeroberts/Projects/IntervalTimerApp/IntervalTimerApp/Core/Models/TimelineEvent.swift

@@ -25,18 +25,19 @@ struct TimerScriptBuilder: TimerScriptBuilderProtocol {
 
         switch preset.config {
         case .amrap(let config):
-            for interval in 0..<max(1, config.intervals) {
+            let intervals = config.intervalDurations.isEmpty ? [300.0] : config.intervalDurations
+            for (index, intervalDuration) in intervals.enumerated() {
                 events.append(
                     TimelineEvent(
                         kind: .work,
-                        label: "AMRAP \(interval + 1)",
+                        label: "AMRAP \(index + 1)",
                         startOffset: cursor,
-                        duration: config.intervalDuration,
+                        duration: intervalDuration,
                         supportsHalfwayCue: false,
                         supportsFinal3Cue: true
                     )
                 )
-                cursor += config.intervalDuration
+                cursor += intervalDuration
             }
             return events
         case .emom(let config):

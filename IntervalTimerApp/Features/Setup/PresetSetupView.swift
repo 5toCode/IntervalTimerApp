@@ -18,57 +18,41 @@ struct PresetSetupView: View {
             Section("Timer config") {
                 switch viewModel.mode {
                 case .amrap:
-                    Picker("Interval length", selection: $viewModel.amrapIntervalDuration) {
-                        ForEach(viewModel.amrapIntervalOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
+                    ForEach(Array(viewModel.amrapDurations.enumerated()), id: \.offset) { index, _ in
+                        wheelPicker(
+                            title: "Interval \(index + 1)",
+                            selection: Binding(
+                                get: { viewModel.amrapDurations[index] },
+                                set: { viewModel.amrapDurations[index] = $0 }
+                            ),
+                            options: viewModel.amrapIntervalOptions
+                        )
+                        if viewModel.amrapDurations.count > 1 {
+                            Button(role: .destructive) {
+                                viewModel.removeAmrapInterval(at: index)
+                            } label: {
+                                Text("Remove interval \(index + 1)")
+                            }
                         }
                     }
-                    Picker("Intervals", selection: $viewModel.amrapIntervals) {
-                        ForEach(1...20, id: \.self) { count in
-                            Text("\(count)").tag(count)
-                        }
+                    Button {
+                        viewModel.addAmrapInterval()
+                    } label: {
+                        Label("Add interval", systemImage: "plus.circle.fill")
                     }
                 case .forTime:
-                    Picker("For", selection: $viewModel.totalDuration) {
-                        ForEach(viewModel.forTimeOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
+                    wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.forTimeOptions)
                 case .emom:
-                    Picker("For", selection: $viewModel.totalDuration) {
-                        ForEach(viewModel.forTimeOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
-                    Picker("Every", selection: $viewModel.intervalEvery) {
-                        ForEach(viewModel.emomEveryOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
+                    wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.emomForOptions)
+                    wheelPicker(title: "Every", selection: $viewModel.intervalEvery, options: viewModel.emomEveryOptions)
                 case .tabata:
                     Stepper("Rounds: \(viewModel.rounds)", value: $viewModel.rounds, in: 1...50)
-                    Picker("Work", selection: $viewModel.workDuration) {
-                        ForEach(viewModel.tabataWorkOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
-                    Picker("Rest", selection: $viewModel.restDuration) {
-                        ForEach(viewModel.tabataRestOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
+                    wheelPicker(title: "Work", selection: $viewModel.workDuration, options: viewModel.tabataWorkOptions)
+                    wheelPicker(title: "Rest", selection: $viewModel.restDuration, options: viewModel.tabataRestOptions)
                 case .customIntervals:
                     Stepper("Rounds: \(viewModel.rounds)", value: $viewModel.rounds, in: 1...20)
-                    Picker("Work interval", selection: $viewModel.customSteps[0].duration) {
-                        ForEach(viewModel.customStepOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
-                    Picker("Rest interval", selection: $viewModel.customSteps[1].duration) {
-                        ForEach(viewModel.customStepOptions, id: \.self) { option in
-                            Text(viewModel.label(for: option)).tag(option)
-                        }
-                    }
+                    wheelPicker(title: "Work interval", selection: $viewModel.customSteps[0].duration, options: viewModel.customStepOptions)
+                    wheelPicker(title: "Rest interval", selection: $viewModel.customSteps[1].duration, options: viewModel.customStepOptions)
                 }
             }
 
@@ -83,5 +67,22 @@ struct PresetSetupView: View {
         .background(Theme.background.ignoresSafeArea())
         .navigationTitle(viewModel.mode.title)
         .toolbarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder
+    private func wheelPicker(title: String, selection: Binding<Double>, options: [Double]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.subheadline.weight(.semibold))
+            Picker(title, selection: selection) {
+                ForEach(options, id: \.self) { option in
+                    Text(viewModel.label(for: option)).tag(option)
+                }
+            }
+            .pickerStyle(.wheel)
+            .frame(maxWidth: .infinity)
+            .frame(height: 120)
+            .clipped()
+        }
     }
 }

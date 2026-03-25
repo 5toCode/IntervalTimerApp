@@ -10,9 +10,13 @@ struct HomeView: View {
             Theme.background.ignoresSafeArea()
             VStack(spacing: 18) {
                 Spacer()
-                Text("IntervalIQ")
-                    .font(.system(size: 52, weight: .bold))
-                    .foregroundStyle(Theme.primaryText)
+                HStack(spacing: 0) {
+                    Text("Interval")
+                        .foregroundStyle(Theme.primaryText)
+                    Text("IQ")
+                        .foregroundStyle(Color.cyan)
+                }
+                .font(.system(size: 52, weight: .bold, design: .rounded))
                 Text("TIMER")
                     .font(.title3.weight(.medium))
                     .foregroundStyle(Theme.secondaryText)
