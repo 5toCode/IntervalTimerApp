@@ -32,4 +32,17 @@ final class TimerScriptBuilderTests: XCTestCase {
         let amrapEvents = script.filter { $0.kind == .work }
         XCTAssertEqual(amrapEvents.map(\.duration), [120, 180, 240])
     }
+
+    func testAmrapAddsRestBetweenIntervalsWhenConfigured() {
+        let preset = TimerPreset(
+            name: "AMRAP",
+            mode: .amrap,
+            preStartCountdown: 10,
+            config: .amrap(AMRAPConfig(intervalDurations: [120, 180, 240], restBetweenIntervals: 30))
+        )
+        let script = builder.buildScript(from: preset)
+        let restEvents = script.filter { $0.kind == .rest }
+        XCTAssertEqual(restEvents.count, 2)
+        XCTAssertEqual(restEvents.map(\.duration), [30, 30])
+    }
 }

@@ -17,10 +17,10 @@ struct SettingsView: View {
                 Toggle("Audible cues", isOn: $settings.audibleCuesEnabled)
             }
         }
-        .onChange(of: settings.defaultCountdownSeconds) { _ in
+        .onChange(of: settings.defaultCountdownSeconds, initial: false) { _, _ in
             settings.persist()
         }
-        .onChange(of: settings.audibleCuesEnabled) { _ in
+        .onChange(of: settings.audibleCuesEnabled, initial: false) { _, _ in
             settings.persist()
         }
         .scrollContentBackground(.hidden)

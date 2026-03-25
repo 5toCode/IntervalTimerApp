@@ -16,6 +16,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.mikeroberts.IntervalTimerApp
         PRODUCT_NAME: IntervalTimerApp
+        INFOPLIST_KEY_CFBundleDisplayName: IntervalIQ
+        INFOPLIST_KEY_CFBundleName: IntervalIQ
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleLightContent

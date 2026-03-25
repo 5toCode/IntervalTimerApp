@@ -26,6 +26,7 @@ struct TimerScriptBuilder: TimerScriptBuilderProtocol {
         switch preset.config {
         case .amrap(let config):
             let intervals = config.intervalDurations.isEmpty ? [300.0] : config.intervalDurations
+            let restDuration = max(0, config.restBetweenIntervals ?? 0)
             for (index, intervalDuration) in intervals.enumerated() {
                 events.append(
                     TimelineEvent(
@@ -38,6 +39,18 @@ struct TimerScriptBuilder: TimerScriptBuilderProtocol {
                     )
                 )
                 cursor += intervalDuration
+                let hasNext = index < intervals.count - 1
+                if hasNext, restDuration > 0 {
+                    events.append(
+                        TimelineEvent(
+                            kind: .rest,
+                            label: "Rest \(index + 1)",
+                            startOffset: cursor,
+                            duration: restDuration
+                        )
+                    )
+                    cursor += restDuration
+                }
             }
             return events
         case .emom(let config):

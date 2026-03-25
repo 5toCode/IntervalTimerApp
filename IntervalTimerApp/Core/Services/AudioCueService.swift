@@ -6,12 +6,15 @@ protocol CueDispatching {
 }
 
 final class AudioCueService: CueDispatching {
+    private let shortBeepSoundID: SystemSoundID = 1005
+    private let longBeepSoundID: SystemSoundID = 1016
+
     func play(_ event: CueEvent) {
         switch event {
         case .intervalStartLongBeep:
-            AudioServicesPlaySystemSoundWithCompletion(1013, nil)
+            AudioServicesPlayAlertSound(longBeepSoundID)
         case .countdown321, .intervalHalfway, .intervalFinal3:
-            AudioServicesPlaySystemSoundWithCompletion(1104, nil)
+            AudioServicesPlayAlertSound(shortBeepSoundID)
         }
     }
 }

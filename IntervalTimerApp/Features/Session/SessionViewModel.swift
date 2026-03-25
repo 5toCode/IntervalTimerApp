@@ -3,6 +3,7 @@ import Foundation
 
 final class SessionViewModel: ObservableObject {
     @Published var remainingText: String = "00:00"
+    @Published var countdownText: String?
     @Published var currentLabel: String = "Ready"
     @Published var state: TimerState = .idle
     @Published var cueLegend: String = "Cues: 3-2-1, long start, halfway, final 3"
@@ -12,6 +13,7 @@ final class SessionViewModel: ObservableObject {
     private let engine: TimerEngineProtocol
     private let cueDispatcher: CueDispatching
     private let settings: AppSettings
+    private var script: [TimelineEvent] = []
     private var cancellables: Set<AnyCancellable> = []
 
     init(
@@ -30,6 +32,14 @@ final class SessionViewModel: ObservableObject {
         bind()
     }
 
+    func primaryAction() {
+        if state == .running {
+            engine.pause()
+            return
+        }
+        startOrResume()
+    }
+
     func startOrResume() {
         if state == .paused {
             engine.resume()
@@ -43,7 +53,7 @@ final class SessionViewModel: ObservableObject {
     func skip() { engine.skipToNextEvent() }
 
     private func configure() {
-        let script = scriptBuilder.buildScript(from: preset)
+        script = scriptBuilder.buildScript(from: preset)
         let totalDuration = script.last.map(\.endOffset) ?? 0
         engine.configure(script: script, totalDuration: totalDuration)
     }
@@ -57,8 +67,9 @@ final class SessionViewModel: ObservableObject {
         engine.ticks
             .receive(on: DispatchQueue.main)
             .sink { [weak self] tick in
-                self?.remainingText = Self.format(seconds: tick.remaining)
-                self?.currentLabel = tick.currentEvent?.label ?? "Complete"
+                guard let self else { return }
+                self.currentLabel = tick.currentEvent?.label ?? "Complete"
+                self.updateTimerDisplay(from: tick)
             }
             .store(in: &cancellables)
 
@@ -75,5 +86,27 @@ final class SessionViewModel: ObservableObject {
         let minutes = total / 60
         let secs = total % 60
         return String(format: "%02d:%02d", minutes, secs)
+    }
+
+    private func updateTimerDisplay(from tick: TimerTick) {
+        guard let event = tick.currentEvent else {
+            countdownText = nil
+            remainingText = "00:00"
+            return
+        }
+
+        let eventRemaining = max(0, event.endOffset - tick.elapsed)
+
+        if event.kind == .prestart {
+            countdownText = Self.format(seconds: eventRemaining)
+            if let firstInterval = script.first(where: { $0.kind != .prestart }) {
+                remainingText = Self.format(seconds: firstInterval.duration)
+            } else {
+                remainingText = "00:00"
+            }
+        } else {
+            countdownText = nil
+            remainingText = Self.format(seconds: eventRemaining)
+        }
     }
 }

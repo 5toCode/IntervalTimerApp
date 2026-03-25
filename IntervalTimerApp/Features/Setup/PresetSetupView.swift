@@ -12,7 +12,11 @@ struct PresetSetupView: View {
     var body: some View {
         Form {
             Section("Workout") {
-                TextField("Name", text: $viewModel.name)
+                Text(viewModel.mode.title)
+                    .font(.title3.weight(.bold))
+                Text(viewModel.mode.workoutDescription)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
 
             Section("Timer config") {
@@ -31,9 +35,18 @@ struct PresetSetupView: View {
                             Button(role: .destructive) {
                                 viewModel.removeAmrapInterval(at: index)
                             } label: {
-                                Text("Remove interval \(index + 1)")
+                                Image(systemName: "trash.fill")
+                                    .foregroundStyle(.red)
                             }
+                            .buttonStyle(.plain)
                         }
+                    }
+                    if viewModel.amrapDurations.count > 1 {
+                        wheelPicker(
+                            title: "Rest between intervals",
+                            selection: $viewModel.amrapRestBetweenIntervals,
+                            options: viewModel.amrapRestOptions
+                        )
                     }
                     Button {
                         viewModel.addAmrapInterval()
@@ -43,8 +56,8 @@ struct PresetSetupView: View {
                 case .forTime:
                     wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.forTimeOptions)
                 case .emom:
-                    wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.emomForOptions)
                     wheelPicker(title: "Every", selection: $viewModel.intervalEvery, options: viewModel.emomEveryOptions)
+                    wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.emomForOptions)
                 case .tabata:
                     Stepper("Rounds: \(viewModel.rounds)", value: $viewModel.rounds, in: 1...50)
                     wheelPicker(title: "Work", selection: $viewModel.workDuration, options: viewModel.tabataWorkOptions)

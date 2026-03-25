@@ -19,6 +19,16 @@ enum WorkoutMode: String, CaseIterable, Identifiable, Codable {
         }
     }
 
+    var workoutDescription: String {
+        switch self {
+        case .amrap: return "As many rounds as possible"
+        case .emom: return "Every minute on the minute"
+        case .forTime: return "Complete the work as fast as possible"
+        case .tabata: return "Alternating high-intensity work and rest"
+        case .customIntervals: return "Build your own work and rest intervals"
+        }
+    }
+
     var accentColor: Color {
         switch self {
         case .amrap: return Color.orange

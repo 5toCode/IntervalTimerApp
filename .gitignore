@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific files
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Build artifacts
+build/
+DerivedData/
+.deriveddata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Mint
+.mint/
+
+# Tuist
+.tuist-bin/
+.tuist-cache/
+
+# xcodegen local binaries/artifacts
+xcodegen-bin/
+xcodegen.zip
+

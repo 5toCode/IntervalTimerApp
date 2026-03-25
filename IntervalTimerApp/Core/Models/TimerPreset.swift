@@ -2,6 +2,12 @@ import Foundation
 
 struct AMRAPConfig: Codable, Equatable, Hashable {
     var intervalDurations: [TimeInterval]
+    var restBetweenIntervals: TimeInterval?
+
+    init(intervalDurations: [TimeInterval], restBetweenIntervals: TimeInterval? = nil) {
+        self.intervalDurations = intervalDurations
+        self.restBetweenIntervals = restBetweenIntervals
+    }
 }
 
 struct EMOMConfig: Codable, Equatable, Hashable {

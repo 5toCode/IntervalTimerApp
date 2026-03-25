@@ -11,12 +11,23 @@ struct SessionView: View {
         ZStack {
             Theme.background.ignoresSafeArea()
             VStack(spacing: 20) {
+                if let countdown = viewModel.countdownText {
+                    VStack(spacing: 6) {
+                        Text("Starting In")
+                            .font(.headline.weight(.semibold))
+                            .foregroundStyle(Theme.secondaryText)
+                        Text(countdown)
+                            .font(.system(size: 52, weight: .bold, design: .rounded))
+                            .foregroundStyle(.orange)
+                    }
+                }
+
                 Text(viewModel.currentLabel)
                     .font(.title2.weight(.semibold))
                     .foregroundStyle(Theme.secondaryText)
 
                 Text(viewModel.remainingText)
-                    .font(.system(size: 74, weight: .bold, design: .rounded))
+                    .font(.system(size: 108, weight: .bold, design: .rounded))
                     .foregroundStyle(Theme.primaryText)
 
                 Text(viewModel.cueLegend)
@@ -24,9 +35,8 @@ struct SessionView: View {
                     .foregroundStyle(Theme.secondaryText)
 
                 SessionControlsView(
-                    isPaused: viewModel.state == .paused,
-                    onPrimary: viewModel.startOrResume,
-                    onPause: viewModel.pause,
+                    isRunning: viewModel.state == .running,
+                    onPrimary: viewModel.primaryAction,
                     onReset: viewModel.reset,
                     onSkip: viewModel.skip
                 )
