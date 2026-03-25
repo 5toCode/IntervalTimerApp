@@ -54,7 +54,7 @@ struct PresetSetupView: View {
                         Label("Add interval", systemImage: "plus.circle.fill")
                     }
                 case .forTime:
-                    wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.forTimeOptions)
+                    wheelPicker(title: "Time Cap", selection: $viewModel.totalDuration, options: viewModel.forTimeOptions)
                 case .emom:
                     wheelPicker(title: "Every", selection: $viewModel.intervalEvery, options: viewModel.emomEveryOptions)
                     wheelPicker(title: "For", selection: $viewModel.totalDuration, options: viewModel.emomForOptions)

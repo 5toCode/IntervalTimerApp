@@ -42,7 +42,7 @@ final class PresetSetupViewModel: ObservableObject {
         case .emom:
             config = .emom(EMOMConfig(totalDuration: max(totalDuration, intervalEvery), intervalEvery: intervalEvery))
         case .forTime:
-            config = .forTime(ForTimeConfig(targetDuration: totalDuration, capDuration: totalDuration))
+            config = .forTime(ForTimeConfig(targetDuration: nil, capDuration: totalDuration))
         case .tabata:
             config = .tabata(
                 TabataConfig(

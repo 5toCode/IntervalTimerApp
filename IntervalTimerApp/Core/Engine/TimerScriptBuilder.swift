@@ -69,7 +69,7 @@ struct TimerScriptBuilder: TimerScriptBuilderProtocol {
             return events
         case .forTime(let config):
             let duration = config.capDuration ?? config.targetDuration ?? 0
-            events.append(TimelineEvent(kind: .work, label: "For Time", startOffset: cursor, duration: duration))
+            events.append(TimelineEvent(kind: .work, label: "Time Cap", startOffset: cursor, duration: duration))
         case .tabata(let config):
             for round in 0..<max(1, config.rounds) {
                 events.append(TimelineEvent(kind: .work, label: "Work \(round + 1)", startOffset: cursor, duration: config.workDuration))

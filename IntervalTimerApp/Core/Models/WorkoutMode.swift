@@ -23,7 +23,7 @@ enum WorkoutMode: String, CaseIterable, Identifiable, Codable {
         switch self {
         case .amrap: return "As many rounds as possible"
         case .emom: return "Every minute on the minute"
-        case .forTime: return "Complete the work as fast as possible"
+        case .forTime: return "Finish as fast as possible before time cap"
         case .tabata: return "Alternating high-intensity work and rest"
         case .customIntervals: return "Build your own work and rest intervals"
         }
@@ -31,11 +31,11 @@ enum WorkoutMode: String, CaseIterable, Identifiable, Codable {
 
     var accentColor: Color {
         switch self {
-        case .amrap: return Color.orange
-        case .emom: return Color.purple
-        case .forTime: return Color.blue
-        case .tabata: return Color.green
-        case .customIntervals: return Color.gray
+        case .amrap: return Color(red: 0.95, green: 0.42, blue: 0.24)
+        case .emom: return Color(red: 0.64, green: 0.28, blue: 0.92)
+        case .forTime: return Color(red: 0.27, green: 0.50, blue: 0.93)
+        case .tabata: return Color(red: 0.13, green: 0.74, blue: 0.62)
+        case .customIntervals: return Color(red: 0.35, green: 0.38, blue: 0.44)
         }
     }
 }
