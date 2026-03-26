@@ -1,6 +1,8 @@
 import SwiftUI
 
 enum CountdownSoundOption: Int, CaseIterable, Identifiable {
+    /// Bundled MP3 (Freesound community short beep); not a system sound ID.
+    case communityShortBeep47916 = 20_000
     case warning = 1006
     case mediumBeep = 1007
     case alert = 1053
@@ -11,6 +13,7 @@ enum CountdownSoundOption: Int, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
+        case .communityShortBeep47916: return "Community Beep"
         case .warning: return "Warning Beep"
         case .mediumBeep: return "Medium Beep (Long)"
         case .alert: return "Alert Ping"
@@ -71,11 +74,11 @@ final class AppSettings: ObservableObject {
         let defaults = UserDefaults.standard
         let storedCountdown = defaults.object(forKey: Keys.defaultCountdownSeconds) as? Int ?? 10
         let storedAudible = defaults.object(forKey: Keys.audibleCuesEnabled) as? Bool ?? true
-        let storedCountdownSound = defaults.object(forKey: Keys.countdownSoundID) as? Int ?? CountdownSoundOption.warning.rawValue
+        let storedCountdownSound = defaults.object(forKey: Keys.countdownSoundID) as? Int ?? CountdownSoundOption.communityShortBeep47916.rawValue
         let storedStartSound = defaults.object(forKey: Keys.startSoundID) as? Int ?? StartSoundOption.boxingBell.rawValue
         self.defaultCountdownSeconds = storedCountdown
         self.audibleCuesEnabled = storedAudible
-        self.countdownSoundID = CountdownSoundOption(rawValue: storedCountdownSound)?.rawValue ?? CountdownSoundOption.warning.rawValue
+        self.countdownSoundID = CountdownSoundOption(rawValue: storedCountdownSound)?.rawValue ?? CountdownSoundOption.communityShortBeep47916.rawValue
         self.startSoundID = StartSoundOption(rawValue: storedStartSound)?.rawValue ?? StartSoundOption.boxingBell.rawValue
     }
 

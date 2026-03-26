@@ -17,6 +17,7 @@
 		372BC9F74D0B484B0C408990 /* TimelineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D6F5AC58B4B4B00DA90734 /* TimelineEvent.swift */; };
 		4F245D49851CA78D5D6E104C /* CueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD821B7DE643434989E57E1B /* CueScheduler.swift */; };
 		5432C90CE3EE52DD2052C7C8 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852446D5BF8614AF39F13B5 /* AppSettings.swift */; };
+		54D8E163B6D64C8E8D138A51 /* SoundPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D940DCCBF42408845D3A8 /* SoundPreview.swift */; };
 		5E760233FB7B8894698FD22B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B581B66BC6BA57CE65F60081 /* HomeView.swift */; };
 		639AC72539F7CBFFFE5C414A /* PresetSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACD3E9AE9C8A41A2B40CDBD /* PresetSetupViewModel.swift */; };
 		657FD833B46E29D477D36B9A /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB787468E1CA0E0959687480 /* HapticsService.swift */; };
@@ -24,6 +25,7 @@
 		6D92D2286690C96E50F232E2 /* PresetSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CCAB5A7F6443017D9FF8EF /* PresetSetupView.swift */; };
 		6E7FB28C0FE18519EEB5C651 /* WorkoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA7D3212E0C03CA5CE0FAB /* WorkoutMode.swift */; };
 		7F664E41FC9DF6717099E5BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8292F025E4E5DDD99D1867 /* Assets.xcassets */; };
+		A1B2C3D45E6F7890ABCDEFF1 /* countdown_beep_47916.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D45E6F7890ABCDEFF2 /* countdown_beep_47916.mp3 */; };
 		80ACBB84AA63EFE40891E56B /* TimerScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B1209323F65DBA3879301 /* TimerScriptBuilder.swift */; };
 		87411F4AC38128E81C468D87 /* TimerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819FC76AD02A0024091AAE54 /* TimerPreset.swift */; };
 		893F51A3ED648A33B18A383A /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0B65572AFEC8D2BA2C425 /* SessionViewModel.swift */; };
@@ -63,6 +65,7 @@
 		35B3BE41235D764B47F2D396 /* TimerEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngineProtocol.swift; sourceTree = "<group>"; };
 		42E3988D94C390D8E01F38FA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		4A8292F025E4E5DDD99D1867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D45E6F7890ABCDEFF2 /* countdown_beep_47916.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown_beep_47916.mp3; sourceTree = "<group>"; };
 		534B1209323F65DBA3879301 /* TimerScriptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScriptBuilder.swift; sourceTree = "<group>"; };
 		556E6CA6A29504A3BD003DF4 /* CueSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CueSchedulerTests.swift; sourceTree = "<group>"; };
 		56CCAB5A7F6443017D9FF8EF /* PresetSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetSetupView.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		CB787468E1CA0E0959687480 /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		CF1D6CB8CBF63B32B9AAD512 /* TimerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEngine.swift; sourceTree = "<group>"; };
 		D852446D5BF8614AF39F13B5 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		6B0D940DCCBF42408845D3A8 /* SoundPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPreview.swift; sourceTree = "<group>"; };
 		DA6160706E9E091D376B109B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD821B7DE643434989E57E1B /* CueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CueScheduler.swift; sourceTree = "<group>"; };
 		F7706CDBD8F3A3631B60C1CA /* IntervalTimerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerAppApp.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		A1B2C3D45E6F7890ABCDEFF3 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D45E6F7890ABCDEFF2 /* countdown_beep_47916.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		00ED465C38AE2567C4B14858 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		146CCB8D1744ED1BA15C3E6C /* IntervalTimerApp */ = {
 			isa = PBXGroup;
 			children = (
+				A1B2C3D45E6F7890ABCDEFF3 /* Audio */,
 				4A8292F025E4E5DDD99D1867 /* Assets.xcassets */,
 				9178DEC55C2B202968AE56BB /* App */,
 				2EFD5478386065048046E29B /* Core */,
@@ -134,6 +147,7 @@
 				D852446D5BF8614AF39F13B5 /* AppSettings.swift */,
 				050A43D96ED7F42E1863B3AB /* AudioCueService.swift */,
 				CB787468E1CA0E0959687480 /* HapticsService.swift */,
+				6B0D940DCCBF42408845D3A8 /* SoundPreview.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F664E41FC9DF6717099E5BB /* Assets.xcassets in Resources */,
+				A1B2C3D45E6F7890ABCDEFF1 /* countdown_beep_47916.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +347,7 @@
 			files = (
 				329F466D55A24896B3A54EE1 /* AppRouter.swift in Sources */,
 				5432C90CE3EE52DD2052C7C8 /* AppSettings.swift in Sources */,
+				54D8E163B6D64C8E8D138A51 /* SoundPreview.swift in Sources */,
 				A247227397B5422FFDDD0372 /* AudioCueService.swift in Sources */,
 				EBC196846E0E692DB38D33C0 /* CueEvent.swift in Sources */,
 				4F245D49851CA78D5D6E104C /* CueScheduler.swift in Sources */,

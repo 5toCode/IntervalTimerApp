@@ -33,10 +33,12 @@ struct SettingsView: View {
         .onChange(of: settings.audibleCuesEnabled, initial: false) { _, _ in
             settings.persist()
         }
-        .onChange(of: settings.countdownSoundID, initial: false) { _, _ in
+        .onChange(of: settings.countdownSoundID, initial: false) { _, newValue in
+            SoundPreview.playCountdownSound(id: newValue)
             settings.persist()
         }
-        .onChange(of: settings.startSoundID, initial: false) { _, _ in
+        .onChange(of: settings.startSoundID, initial: false) { _, newValue in
+            SoundPreview.playStartSound(id: newValue)
             settings.persist()
         }
         .scrollContentBackground(.hidden)

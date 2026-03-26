@@ -97,7 +97,7 @@ final class SessionViewModel: ObservableObject {
         let eventRemaining = max(0, event.endOffset - tick.elapsed)
 
         if event.kind == .prestart {
-            countdownText = Self.format(seconds: eventRemaining)
+            countdownText = Self.formatCountdown(seconds: eventRemaining)
             if let firstInterval = script.first(where: { $0.kind != .prestart }) {
                 remainingText = Self.format(seconds: firstInterval.duration)
             } else {
@@ -107,5 +107,11 @@ final class SessionViewModel: ObservableObject {
             countdownText = nil
             remainingText = Self.format(seconds: eventRemaining)
         }
+    }
+
+    /// Rounds up so the UI shows "3" when ~3s remain (avoids skipping "3" due to tick granularity).
+    private static func formatCountdown(seconds: TimeInterval) -> String {
+        let total = max(0, Int(ceil(seconds)))
+        return String(format: "%02d", total)
     }
 }
