@@ -130,4 +130,6 @@ xcodebuild test \
 
 ## License
 
-Add your project license details here (for example, MIT).
+This project is licensed under the MIT License.
+
+See the full license text in `LICENSE`.
