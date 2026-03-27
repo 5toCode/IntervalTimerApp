@@ -49,15 +49,6 @@ enum CueScheduler {
         }
 
         if event.supportsFinal3Cue {
-            for remaining in [5, 4] {
-                let atSecond = eventEnd - remaining
-                if atSecond >= eventStart {
-                    cues.append(ScheduledCue(second: atSecond, event: .intervalTick(second: remaining)))
-                }
-            }
-        }
-
-        if event.supportsFinal3Cue {
             for remaining in [3, 2, 1] {
                 let atSecond = eventEnd - remaining
                 if atSecond >= eventStart {

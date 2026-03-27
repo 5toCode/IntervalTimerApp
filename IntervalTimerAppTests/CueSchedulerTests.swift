@@ -22,8 +22,6 @@ final class CueSchedulerTests: XCTestCase {
 
         let scheduled = CueScheduler.schedule(for: script)
         XCTAssertFalse(scheduled.contains { $0.event == .intervalFinal3(second: 3) })
-        XCTAssertFalse(scheduled.contains { $0.event == .intervalTick(second: 5) })
-        XCTAssertFalse(scheduled.contains { $0.event == .intervalTick(second: 4) })
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 2) })
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 1) })
     }

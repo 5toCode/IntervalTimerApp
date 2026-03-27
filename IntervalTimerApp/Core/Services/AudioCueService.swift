@@ -29,8 +29,6 @@ final class AudioCueService: CueDispatching {
         case .intervalFinal3(let second):
             playCountdownCue()
             speakCountdownIfEnabled(second: second)
-        case .intervalTick:
-            playTickIfEnabled()
         }
     }
 
@@ -62,42 +60,22 @@ final class AudioCueService: CueDispatching {
     }
 
     private func playCountdownCue() {
-        switch CountdownSoundOption(rawValue: settings.countdownSoundID) {
+        let option = CountdownSoundOption(rawValue: settings.countdownSoundID) ?? .electronic
+        switch option {
         case .communityShortBeep47916:
             if !playPlayer(resource: "countdown_beep_47916", ext: "mp3") {
-                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.warning.rawValue))
+                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.electronic.rawValue))
             }
-        case .gymHighBeep:
-            if !playPlayer(resource: "gym_beep_high_short", ext: "wav") {
-                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.warning.rawValue))
-            }
-        case .none:
+        case .electronic, .pulse:
             AudioServicesPlayAlertSound(SystemSoundID(settings.countdownSoundID))
         }
     }
 
     private func playStartCue() {
-        switch StartSoundOption(rawValue: settings.startSoundID) {
-        case .gymGong:
-            if !playPlayer(resource: "gym_gong_round_start", ext: "wav") {
-                AudioServicesPlaySystemSound(SystemSoundID(StartSoundOption.boxingBell.rawValue))
-            }
-        case .gymWhistle:
-            if !playPlayer(resource: "gym_whistle_referee", ext: "wav") {
-                AudioServicesPlaySystemSound(SystemSoundID(StartSoundOption.boxingBell.rawValue))
-            }
-        case .none:
+        let option = StartSoundOption(rawValue: settings.startSoundID) ?? .boxingBell
+        switch option {
+        case .boxingBell, .chime:
             AudioServicesPlaySystemSound(SystemSoundID(settings.startSoundID))
-        }
-    }
-
-    private func playTickIfEnabled() {
-        guard settings.tickingEnabled else { return }
-        switch TickingSoundOption(rawValue: settings.tickingSoundID) {
-        case .gymAnalogTick:
-            _ = playPlayer(resource: "gym_tick_analog", ext: "wav")
-        case .none:
-            return
         }
     }
 

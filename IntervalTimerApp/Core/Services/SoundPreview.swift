@@ -36,11 +36,7 @@ enum SoundPreview {
         ensurePlaybackSession()
         if id == CountdownSoundOption.communityShortBeep47916.rawValue {
             if !playBundled(resource: "countdown_beep_47916", ext: "mp3") {
-                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.warning.rawValue))
-            }
-        } else if id == CountdownSoundOption.gymHighBeep.rawValue {
-            if !playBundled(resource: "gym_beep_high_short", ext: "wav") {
-                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.warning.rawValue))
+                AudioServicesPlayAlertSound(SystemSoundID(CountdownSoundOption.electronic.rawValue))
             }
         } else {
             AudioServicesPlayAlertSound(SystemSoundID(id))
@@ -49,23 +45,6 @@ enum SoundPreview {
 
     static func playStartSound(id: Int) {
         ensurePlaybackSession()
-        if id == StartSoundOption.gymGong.rawValue {
-            if !playBundled(resource: "gym_gong_round_start", ext: "wav") {
-                AudioServicesPlaySystemSound(SystemSoundID(StartSoundOption.boxingBell.rawValue))
-            }
-        } else if id == StartSoundOption.gymWhistle.rawValue {
-            if !playBundled(resource: "gym_whistle_referee", ext: "wav") {
-                AudioServicesPlaySystemSound(SystemSoundID(StartSoundOption.boxingBell.rawValue))
-            }
-        } else {
-            AudioServicesPlaySystemSound(SystemSoundID(id))
-        }
-    }
-
-    static func playTickSound(id: Int) {
-        ensurePlaybackSession()
-        if id == TickingSoundOption.gymAnalogTick.rawValue {
-            _ = playBundled(resource: "gym_tick_analog", ext: "wav")
-        }
+        AudioServicesPlaySystemSound(SystemSoundID(id))
     }
 }

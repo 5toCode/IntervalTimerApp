@@ -26,13 +26,6 @@ struct SettingsView: View {
                     }
                 }
                 Toggle("Voice alerts", isOn: $settings.voiceAlertsEnabled)
-                Toggle("Final ticks", isOn: $settings.tickingEnabled)
-                Picker("Ticking sound", selection: $settings.tickingSoundID) {
-                    ForEach(TickingSoundOption.allCases) { option in
-                        Text(option.title).tag(option.rawValue)
-                    }
-                }
-                .disabled(!settings.tickingEnabled)
             }
         }
         .onChange(of: settings.defaultCountdownSeconds, initial: false) { _, _ in
@@ -50,13 +43,6 @@ struct SettingsView: View {
             settings.persist()
         }
         .onChange(of: settings.voiceAlertsEnabled, initial: false) { _, _ in
-            settings.persist()
-        }
-        .onChange(of: settings.tickingEnabled, initial: false) { _, _ in
-            settings.persist()
-        }
-        .onChange(of: settings.tickingSoundID, initial: false) { _, newValue in
-            SoundPreview.playTickSound(id: newValue)
             settings.persist()
         }
         .scrollContentBackground(.hidden)

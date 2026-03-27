@@ -5,5 +5,4 @@ enum CueEvent: Equatable {
     case intervalStart(kind: TimelineEventKind)
     case intervalHalfway
     case intervalFinal3(second: Int)
-    case intervalTick(second: Int)
 }
