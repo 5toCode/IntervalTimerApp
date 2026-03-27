@@ -2,7 +2,7 @@ import XCTest
 @testable import IntervalTimerApp
 
 final class CueSchedulerTests: XCTestCase {
-    func testPrestartAndLongBeepScheduling() {
+    func testPrestartAndIntervalStartScheduling() {
         let script = [
             TimelineEvent(kind: .prestart, label: "Get Ready", startOffset: 0, duration: 10, supportsHalfwayCue: false, supportsFinal3Cue: false),
             TimelineEvent(kind: .work, label: "Work", startOffset: 10, duration: 60)
@@ -12,7 +12,7 @@ final class CueSchedulerTests: XCTestCase {
         XCTAssertTrue(scheduled.contains(ScheduledCue(second: 7, event: .countdown321(second: 3))))
         XCTAssertTrue(scheduled.contains(ScheduledCue(second: 8, event: .countdown321(second: 2))))
         XCTAssertTrue(scheduled.contains(ScheduledCue(second: 9, event: .countdown321(second: 1))))
-        XCTAssertTrue(scheduled.contains(ScheduledCue(second: 10, event: .intervalStartLongBeep)))
+        XCTAssertTrue(scheduled.contains(ScheduledCue(second: 10, event: .intervalStart(kind: .work))))
     }
 
     func testShortIntervalOnlySchedulesValidFinalSeconds() {
@@ -22,6 +22,8 @@ final class CueSchedulerTests: XCTestCase {
 
         let scheduled = CueScheduler.schedule(for: script)
         XCTAssertFalse(scheduled.contains { $0.event == .intervalFinal3(second: 3) })
+        XCTAssertFalse(scheduled.contains { $0.event == .intervalTick(second: 5) })
+        XCTAssertFalse(scheduled.contains { $0.event == .intervalTick(second: 4) })
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 2) })
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 1) })
     }

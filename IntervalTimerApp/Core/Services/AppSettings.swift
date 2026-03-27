@@ -3,6 +3,7 @@ import SwiftUI
 enum CountdownSoundOption: Int, CaseIterable, Identifiable {
     /// Bundled MP3 (Freesound community short beep); not a system sound ID.
     case communityShortBeep47916 = 20_000
+    case gymHighBeep = 20_001
     case warning = 1006
     case mediumBeep = 1007
     case alert = 1053
@@ -14,6 +15,7 @@ enum CountdownSoundOption: Int, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .communityShortBeep47916: return "Community Beep"
+        case .gymHighBeep: return "Gym High Beep"
         case .warning: return "Warning Beep"
         case .mediumBeep: return "Medium Beep (Long)"
         case .alert: return "Alert Ping"
@@ -24,6 +26,10 @@ enum CountdownSoundOption: Int, CaseIterable, Identifiable {
 }
 
 enum StartSoundOption: Int, CaseIterable, Identifiable {
+    /// Bundled low-frequency gong sample; not a system sound ID.
+    case gymGong = 20_100
+    /// Bundled referee whistle sample; not a system sound ID.
+    case gymWhistle = 20_101
     case boxingBell = 1054
     case ding = 1005
     case chime = 1013
@@ -35,12 +41,29 @@ enum StartSoundOption: Int, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
+        case .gymGong: return "Gym Gong"
+        case .gymWhistle: return "Referee Whistle"
         case .boxingBell: return "Boxing Bell"
         case .ding: return "Ding"
         case .chime: return "Chime"
         case .tone: return "Tone"
         case .signal: return "Signal"
         case .rise: return "Rise Tone"
+        }
+    }
+}
+
+enum TickingSoundOption: Int, CaseIterable, Identifiable {
+    /// Bundled analog-style tick sample; not a system sound ID.
+    case gymAnalogTick = 20_200
+    case none = 0
+
+    var id: Int { rawValue }
+
+    var title: String {
+        switch self {
+        case .gymAnalogTick: return "Analog Tick"
+        case .none: return "Off"
         }
     }
 }
@@ -62,6 +85,9 @@ final class AppSettings: ObservableObject {
         static let audibleCuesEnabled = "audibleCuesEnabled"
         static let countdownSoundID = "countdownSoundID"
         static let startSoundID = "startSoundID"
+        static let voiceAlertsEnabled = "voiceAlertsEnabled"
+        static let tickingEnabled = "tickingEnabled"
+        static let tickingSoundID = "tickingSoundID"
         static let modeSelectionPrefix = "modeSelection."
     }
 
@@ -69,6 +95,9 @@ final class AppSettings: ObservableObject {
     @Published var audibleCuesEnabled: Bool
     @Published var countdownSoundID: Int
     @Published var startSoundID: Int
+    @Published var voiceAlertsEnabled: Bool
+    @Published var tickingEnabled: Bool
+    @Published var tickingSoundID: Int
 
     init() {
         let defaults = UserDefaults.standard
@@ -76,10 +105,16 @@ final class AppSettings: ObservableObject {
         let storedAudible = defaults.object(forKey: Keys.audibleCuesEnabled) as? Bool ?? true
         let storedCountdownSound = defaults.object(forKey: Keys.countdownSoundID) as? Int ?? CountdownSoundOption.communityShortBeep47916.rawValue
         let storedStartSound = defaults.object(forKey: Keys.startSoundID) as? Int ?? StartSoundOption.boxingBell.rawValue
+        let storedVoiceAlerts = defaults.object(forKey: Keys.voiceAlertsEnabled) as? Bool ?? false
+        let storedTicking = defaults.object(forKey: Keys.tickingEnabled) as? Bool ?? false
+        let storedTickingSound = defaults.object(forKey: Keys.tickingSoundID) as? Int ?? TickingSoundOption.gymAnalogTick.rawValue
         self.defaultCountdownSeconds = storedCountdown
         self.audibleCuesEnabled = storedAudible
         self.countdownSoundID = CountdownSoundOption(rawValue: storedCountdownSound)?.rawValue ?? CountdownSoundOption.communityShortBeep47916.rawValue
         self.startSoundID = StartSoundOption(rawValue: storedStartSound)?.rawValue ?? StartSoundOption.boxingBell.rawValue
+        self.voiceAlertsEnabled = storedVoiceAlerts
+        self.tickingEnabled = storedTicking
+        self.tickingSoundID = TickingSoundOption(rawValue: storedTickingSound)?.rawValue ?? TickingSoundOption.gymAnalogTick.rawValue
     }
 
     func persist() {
@@ -88,6 +123,9 @@ final class AppSettings: ObservableObject {
         defaults.set(audibleCuesEnabled, forKey: Keys.audibleCuesEnabled)
         defaults.set(countdownSoundID, forKey: Keys.countdownSoundID)
         defaults.set(startSoundID, forKey: Keys.startSoundID)
+        defaults.set(voiceAlertsEnabled, forKey: Keys.voiceAlertsEnabled)
+        defaults.set(tickingEnabled, forKey: Keys.tickingEnabled)
+        defaults.set(tickingSoundID, forKey: Keys.tickingSoundID)
     }
 
     func loadSelection(for mode: WorkoutMode) -> ModeTimerSelection? {

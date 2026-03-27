@@ -29,8 +29,6 @@ enum CueScheduler {
                 cues.append(ScheduledCue(second: atSecond, event: .countdown321(second: remaining)))
             }
         }
-
-        cues.append(ScheduledCue(second: end, event: .intervalStartLongBeep))
         return cues
     }
 
@@ -43,9 +41,20 @@ enum CueScheduler {
         let eventEnd = Int(event.endOffset)
         var cues: [ScheduledCue] = []
 
+        cues.append(ScheduledCue(second: eventStart, event: .intervalStart(kind: event.kind)))
+
         if event.supportsHalfwayCue, duration >= 2 {
             let halfwayOffset = duration / 2
             cues.append(ScheduledCue(second: eventStart + halfwayOffset, event: .intervalHalfway))
+        }
+
+        if event.supportsFinal3Cue {
+            for remaining in [5, 4] {
+                let atSecond = eventEnd - remaining
+                if atSecond >= eventStart {
+                    cues.append(ScheduledCue(second: atSecond, event: .intervalTick(second: remaining)))
+                }
+            }
         }
 
         if event.supportsFinal3Cue {

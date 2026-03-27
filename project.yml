@@ -13,7 +13,7 @@ targets:
     sources:
       - path: IntervalTimerApp
     resources:
-      - path: IntervalTimerApp/Audio/countdown_beep_47916.mp3
+      - path: IntervalTimerApp/Audio
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.mikeroberts.IntervalTimerApp
