@@ -43,7 +43,7 @@ enum CueScheduler {
 
         cues.append(ScheduledCue(second: eventStart, event: .intervalStart(kind: event.kind)))
 
-        if event.supportsHalfwayCue, duration >= 2 {
+        if event.kind == .work, event.supportsHalfwayCue, duration >= 2 {
             let halfwayOffset = duration / 2
             cues.append(ScheduledCue(second: eventStart + halfwayOffset, event: .intervalHalfway))
         }

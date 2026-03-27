@@ -27,12 +27,8 @@ struct SessionView: View {
                     .foregroundStyle(Theme.secondaryText)
 
                 Text(viewModel.remainingText)
-                    .font(.system(size: 108, weight: .bold, design: .rounded))
+                    .font(.system(size: 119, weight: .bold, design: .rounded))
                     .foregroundStyle(Theme.primaryText)
-
-                Text(viewModel.cueLegend)
-                    .font(.footnote)
-                    .foregroundStyle(Theme.secondaryText)
 
                 SessionControlsView(
                     isRunning: viewModel.state == .running,

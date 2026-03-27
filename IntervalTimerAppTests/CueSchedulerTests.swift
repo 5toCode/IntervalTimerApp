@@ -25,4 +25,15 @@ final class CueSchedulerTests: XCTestCase {
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 2) })
         XCTAssertTrue(scheduled.contains { $0.event == .intervalFinal3(second: 1) })
     }
+
+    func testHalfwayCueOnlyForWorkIntervals() {
+        let script = [
+            TimelineEvent(kind: .work, label: "Work", startOffset: 0, duration: 20, supportsHalfwayCue: true, supportsFinal3Cue: false),
+            TimelineEvent(kind: .rest, label: "Rest", startOffset: 20, duration: 20, supportsHalfwayCue: true, supportsFinal3Cue: false)
+        ]
+
+        let scheduled = CueScheduler.schedule(for: script)
+        XCTAssertTrue(scheduled.contains(ScheduledCue(second: 10, event: .intervalHalfway)))
+        XCTAssertFalse(scheduled.contains(ScheduledCue(second: 30, event: .intervalHalfway)))
+    }
 }

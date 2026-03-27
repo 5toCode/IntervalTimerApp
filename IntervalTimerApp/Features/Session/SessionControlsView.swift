@@ -9,9 +9,9 @@ struct SessionControlsView: View {
     var body: some View {
         VStack(spacing: 12) {
             Button(isRunning ? "Pause" : "Start") { onPrimary() }
-                .font(.title2.weight(.bold))
+                .font(.title.weight(.bold))
                 .frame(maxWidth: .infinity)
-                .frame(height: 64)
+                .frame(height: 74)
                 .buttonStyle(.borderedProminent)
             HStack {
                 Button("Skip") { onSkip() }

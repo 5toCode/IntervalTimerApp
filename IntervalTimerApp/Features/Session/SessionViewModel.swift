@@ -6,7 +6,6 @@ final class SessionViewModel: ObservableObject {
     @Published var countdownText: String?
     @Published var currentLabel: String = "Ready"
     @Published var state: TimerState = .idle
-    @Published var cueLegend: String = "Cues: 3-2-1, long start, halfway, final 3"
 
     private let preset: TimerPreset
     private let scriptBuilder: TimerScriptBuilderProtocol
@@ -87,6 +86,14 @@ final class SessionViewModel: ObservableObject {
         return String(format: "%02d:%02d", minutes, secs)
     }
 
+    /// Rounds up interval remaining time so cue boundaries align with what users see in UI.
+    private static func formatRemaining(seconds: TimeInterval) -> String {
+        let total = max(0, Int(ceil(seconds)))
+        let minutes = total / 60
+        let secs = total % 60
+        return String(format: "%02d:%02d", minutes, secs)
+    }
+
     private func updateTimerDisplay(from tick: TimerTick) {
         guard let event = tick.currentEvent else {
             countdownText = nil
@@ -105,7 +112,7 @@ final class SessionViewModel: ObservableObject {
             }
         } else {
             countdownText = nil
-            remainingText = Self.format(seconds: eventRemaining)
+            remainingText = Self.formatRemaining(seconds: eventRemaining)
         }
     }
 
